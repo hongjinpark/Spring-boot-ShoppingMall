@@ -22,7 +22,7 @@ class ItemRepositoryTest {
 
     @Test
     @DisplayName("상품 저장 테스트")
-    public void createItemTest() {
+    public void createItemList() {
 
         Item item = new Item();
         item.setItemNm("테스트 상품");
