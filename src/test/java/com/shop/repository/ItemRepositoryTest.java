@@ -42,7 +42,7 @@ class ItemRepositoryTest {
     @DisplayName("상품명 조회 테스트")
     public void findByItemNmTest() {
         this.createItemList();
-        List<Item> itemList = itemRepository.findByItemNm("테스트 상품1");
+        List<Item> itemList = itemRepository.findByItemNmOrItemDetail("테스트 상품1","테스트 상품 상세 설명 5");
         for(Item item : itemList){
             System.out.println(item.toString());
         }
