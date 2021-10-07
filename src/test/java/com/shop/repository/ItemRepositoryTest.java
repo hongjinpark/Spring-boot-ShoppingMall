@@ -36,10 +36,32 @@ class ItemRepositoryTest {
            item.setUpdateTime(LocalDateTime.now());
            Item savedItem = itemRepository.save(item);
        }
-
-
     }
+    public void createItemList2() {
+        for(int i=1; i<=5; i++){
+            Item item = new Item();
+            item.setItemNm("테스트 상품" + i);
+            item.setPrice(10000 + i);
+            item.setItemDetail("테스트 상품 상세 설명" + i);
+            item.setItemSellStatus(ItemSellStatus.SELL);
+            item.setStockNumber(100);
+            item.setRegTime(LocalDateTime.now());
+            item.setUpdateTime(LocalDateTime.now());
+            itemRepository.save(item);
+        }
 
+        for(int i=6; i<=10; i++){
+            Item item = new Item();
+            item.setItemNm("테스트 상품" + i);
+            item.setPrice(10000 + i);
+            item.setItemDetail("테스트 상품 상세 설명" + i);
+            item.setItemSellStatus(ItemSellStatus.SOLD_OUT);
+            item.setStockNumber(0);
+            item.setRegTime(LocalDateTime.now());
+            item.setUpdateTime(LocalDateTime.now());
+            itemRepository.save(item);
+        }
+    }
     @Test
     @DisplayName("상품명, 상품상세설명 or 테스트")
     public void findByItemNmTest() {
