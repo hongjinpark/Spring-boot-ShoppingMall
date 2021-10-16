@@ -9,6 +9,6 @@ public class ItemController {
     @GetMapping(value = "/admin/item/new")
     public String itemForm() {
 
-        return "/item/itemForm";
+        return "item/itemForm";
     }
 }
