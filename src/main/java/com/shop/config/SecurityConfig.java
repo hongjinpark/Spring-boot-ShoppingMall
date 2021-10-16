@@ -33,6 +33,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/members/logout"))
                 .logoutSuccessUrl("/")
         ;
+
+        http.authorizeRequests()
+                .mvcMatchers("/", "/members/**",
+                        "/item/**","/images/**").permitAll()
+                .mvcMatchers("/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated()
+        ;
     }
 
     @Bean
