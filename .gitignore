@@ -33,7 +33,7 @@ build/
 .vscode/
 
 ### 파일 제외 ###
-git rm --cached src/main/resources/application.properties
+git rm --cached C:/Users/ektkf/Downloads/shop/shop/src/main/resources/application.properties
 
 ### 디렉토리 제외 ###
 #git rm --cached 폴더명\ -r
